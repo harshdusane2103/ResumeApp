@@ -14,7 +14,7 @@
       <img src="https://github.com/harshdusane2103/ResumeApp/blob/master/Referance.png" width=22%,height=35%>
    <img src="https://github.com/harshdusane2103/ResumeApp/blob/master/project.png" width=22%,height=35%>
     <img src="https://github.com/harshdusane2103/ResumeApp/blob/master/prview.png" width=22%,height=35%>
-     <img src="https://github.com/harshdusane2103/ResumeApp/blob/master/pdf.png" width=22%,height=35%>
+     <img src="https://github.com/harshdusane2103/ResumeApp/blob/master/pdf11.png" width=22%,height=35%>
        </p>
   
  
