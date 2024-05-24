@@ -39,12 +39,13 @@ Future<Uint8List> generatepdf() async {
       // pw.Padding(padding: pw.EdgeInsets.all(0)),
 
       pw.MultiPage(
+        margin: pw.EdgeInsets.all(0),
           pageFormat: PdfPageFormat.a4,
           build: (context) {
             return [
               pw.Container(
-
-                height: 600,
+                margin: pw.EdgeInsets.all(0),
+                height: 800,
                 width: double.infinity,
                 decoration: pw.BoxDecoration(
                     color: PdfColors.white,
@@ -54,7 +55,8 @@ Future<Uint8List> generatepdf() async {
                       crossAxisAlignment: pw.CrossAxisAlignment.start,
                       children: [
                         pw.Container(
-                            height: 596,
+                          margin: pw.EdgeInsets.only(right: 10),
+                            height: 680,
                             width: 155,
                             decoration: pw.BoxDecoration(
                               color: PdfColor.fromHex('01204E'),
@@ -126,13 +128,13 @@ Future<Uint8List> generatepdf() async {
                                       text: pw.TextSpan(
                                         children: [
                                           pw.TextSpan(
-                                            text: 'Birth    ',
+                                            text: 'Birth :   ',
                                             style: pw.TextStyle(
                                                 color: PdfColors.white,
                                                 fontSize: 16),
                                           ),
                                           pw.TextSpan(
-                                            text: ' : ${dob}',
+                                            text: ' ${dob}',
                                             style: pw.TextStyle(
                                                 color: PdfColors.white,
                                                 fontSize: 14),
@@ -259,11 +261,11 @@ Future<Uint8List> generatepdf() async {
                     height: 10,
                   ),
                   pw.Column(
-                    crossAxisAlignment: pw.CrossAxisAlignment.start,
+                crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
 
                       pw.Container(
-                        padding:pw.EdgeInsets.all(5) ,
+                        margin: pw.EdgeInsets.only(top: 5),
                         height: 60,
                         width: 300,
                         child: pw.Column(
@@ -284,12 +286,12 @@ Future<Uint8List> generatepdf() async {
 
                       pw.Container(
 
-                          padding: pw.EdgeInsets.all(2),
+
                           height: 80,
                           width: 400,
 
                           child:pw.Column(
-                            crossAxisAlignment: pw.CrossAxisAlignment.start,
+                              crossAxisAlignment: pw.CrossAxisAlignment.start,
                             children: [
                               pw.Text('Objeactive:',
                                   style: pw.TextStyle(
@@ -301,7 +303,9 @@ Future<Uint8List> generatepdf() async {
                           )
 
                       ),
-                      pw.Column(children: [
+                      pw.Column(
+                          crossAxisAlignment: pw.CrossAxisAlignment.start,
+                          children: [
                         pw.Text(
                           'Experience:',
                           style: pw.TextStyle(
@@ -350,29 +354,34 @@ Future<Uint8List> generatepdf() async {
                                               color: PdfColors.black)),
                                     ]))),
                         pw.SizedBox(height: 10),
-                        pw.Text(
-                          'Skill:',
-                          style: pw.TextStyle(
-                            color: PdfColors.black,
-                            fontSize: 20,
-                          ),
-                        ),
-                        pw.Column(
-                            crossAxisAlignment: pw.CrossAxisAlignment.start,
-                            children: List.generate(
-                                skControllerList.length,
-                                    (index) => pw.Column(
-                                    crossAxisAlignment:
-                                    pw.CrossAxisAlignment.start,
-                                    children: [
-                                      pw.SizedBox(height: 2),
-                                      pw.Text(
-                                          '${skControllerList[index].skill!.text}',
-                                          style: pw.TextStyle(
-                                              fontWeight:
-                                              pw.FontWeight.bold,
-                                              color: PdfColors.black)),
-                                    ]))),
+                 pw.Column(
+                   crossAxisAlignment: pw.CrossAxisAlignment.start,
+                   children: [
+                     pw.Text(
+                       'Skill:',
+                       style: pw.TextStyle(
+                         color: PdfColors.black,
+                         fontSize: 20,
+                       ),
+                     ),
+                     pw.Column(
+
+                         children: List.generate(
+                             skControllerList.length,
+                                 (index) => pw.Column(
+                                 crossAxisAlignment:
+                                 pw.CrossAxisAlignment.start,
+                                 children: [
+                                   pw.SizedBox(height: 2),
+                                   pw.Text(
+                                       '${skControllerList[index].skill!.text}',
+                                       style: pw.TextStyle(
+                                           fontWeight:
+                                           pw.FontWeight.bold,
+                                           color: PdfColors.black)),
+                                 ]))),
+                   ]
+                 ),
                         pw.SizedBox(height: 10),
                         pw.Text(
                           'Reference:',

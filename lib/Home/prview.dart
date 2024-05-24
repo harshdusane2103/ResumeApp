@@ -132,14 +132,14 @@ class _prviewScreenState extends State<prviewScreen> {
                                 text: TextSpan(
                                   children: [
                                     TextSpan(
-                                      text: 'Birth    ',
+                                      text: 'Birth:    ',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 16,
                                       ),
                                     ),
                                     TextSpan(
-                                      text: ' : ${dob}',
+                                      text: '  ${dob}',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 14),
                                     ),
